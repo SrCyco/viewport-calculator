@@ -1,0 +1,59 @@
+$color-bg: #00A388;
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background: $color-bg;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    background-color: rgba($color: #000000, $alpha: .2);
+    max-width: 40%;
+    padding: 50px;
+    font-family: Roboto, sans-serif;
+    color: #ffffff;
+    .content{
+        form{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .input-element{
+                width: 45%;
+                input{
+                    width: 100%;
+                    border: none;
+                    font-size: 2em;
+                    padding: 10px;
+                    font-family: Roboto, sans-serif;
+
+
+                }
+            }
+            .calculate{
+                font-size: 2em;
+                font-family: Roboto, sans-serif;
+                background-color: #FF6138;
+                color: #ffffff;
+                border: 0;
+                padding: 15px;
+
+            }
+        }
+    }
+    .result{
+        h2{
+            color: #FFFF9D;
+            display: flex;
+            justify-content: center;
+            font-size: 2.2em;
+
+        }
+    }
+}

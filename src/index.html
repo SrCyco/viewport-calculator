@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/css/main.css">
+</head>
+<body>
+    <main class="container">
+        <section class="options">
+            <div>
+                <label for="vw">vw</label>
+                <input type="radio" name="options" id="vw" value="vw" checked>
+            </div>
+            <div>
+                <label for="vh">vh</label>
+                <input type="radio" name="options" id="vh" value="vh">
+            </div>
+        </section>
+
+        <section class="modes">
+            <div>
+                <label for="auto">Auto</label>
+                <input type="radio" name="mode" id="auto" value="auto" checked>
+            </div>
+            <div>
+                <label for="manual">Manual</label>
+                <input type="radio" name="mode" id="manual" value="manual">
+            </div>
+        </section>
+
+        <h1 class="title">PX to VW</h1>
+
+        <section class="content">
+            <form action="">
+                <div class="input-element">
+                    <label for="device-width">Device width</label>
+                    <input type="number" id="device-value" disabled="true">
+                </div>
+                <div class="input-element">
+                    <label for="value">Value</label>
+                    <input type="number" id="value">
+                </div>
+                <button class="calculate">calculate</button>
+            </form>
+        </section>
+        <section class="result">
+        </section>
+    </main>
+    <script src="../dist/js/bundle.js"></script>
+</body>
+</html>
