@@ -16,10 +16,13 @@ function getUserEntry(element){
 function calculateValue(DeviceValue, userValue){
     return (userValue * 100) / DeviceValue;
 }
-
+function roundResult(result, decimals){
+    return result.toFixed(decimals);    
+}
 function printResult(value, unit){
-    let $resultContainer = document.querySelector('.result');
-    $resultContainer.innerHTML = `<h2>${value}${unit}</h2>`;
+    let $resultContainer = document.getElementById('result_field');
+    let decimals = getUserEntry(document.getElementById('decimals'));
+    $resultContainer.value = roundResult(value, decimals) + unit;
 }
 
 function whoIsSelected(){
@@ -43,7 +46,6 @@ function disableInput(element, state){
 function showDeviceValue(element, value){
     let $input = document.getElementById(element);
     $input.value = value;
-    console.log('entro')
 }
 
 function isSelected(element){
@@ -118,16 +120,45 @@ function posibilities(){
     }
 }
 
+
+
 $userValue.addEventListener('click', (element)=>{
-    console.log(element)
     element.target.value = '';
 });
+
+function changeText(element, text){
+    const inicialText = element.innerText;
+    element.innerText = text;
+    setTimeout(()=>{
+        element.innerText = inicialText;
+    }, 1500);
+}
+
+function copyToClipboard(){
+    let $resultField = document.getElementById('result_field');
+    $resultField.select();
+    document.execCommand('copy');
+}
+
+const $copyBtn = document.getElementById('copy');
+$copyBtn.addEventListener('click', event =>{
+    copyToClipboard();
+    changeText(event.currentTarget, 'Copied!');
+})
+
+function showResultPanel(){
+    let $resultPanel = document.querySelector('.result');
+    $resultPanel.style.visibility = 'visible';
+}
+
 
 const $calculateButton = document.querySelector('.calculate');
 $calculateButton.addEventListener('click', event =>{
     event.preventDefault();
-    posibilities();    
+    posibilities();   
+    showResultPanel(); 
 });
+
 
 (function(){
     addListenerToRadios();

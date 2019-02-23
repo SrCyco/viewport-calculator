@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+
+$color-bg: #00A388;
+*{
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+
+}
+body{
+    background: $color-bg;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+}
+
+input, button{
+    border: none;
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+input[type=number] { -moz-appearance:textfield; }

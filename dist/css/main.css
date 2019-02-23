@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif; }
 
 body {
   background: #00A388;
@@ -8,14 +9,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; }
+  height: 100vh;
+  font-size: 16px; }
+
+input, button {
+  border: none;
+  outline: none; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
+.container .content form .button-wrapper .calculate, .container .result__copy {
+  background-color: #FF6138;
+  color: #ffffff;
+  padding: 15px; }
 
 .container {
   background-color: rgba(0, 0, 0, 0.2);
   max-width: 40%;
   padding: 50px;
-  font-family: Roboto, sans-serif;
   color: #ffffff; }
+  .container .title {
+    text-align: center;
+    font-size: 3em; }
   .container .content form {
     display: flex;
     flex-wrap: wrap;
@@ -24,20 +45,36 @@ body {
       width: 45%; }
       .container .content form .input-element input {
         width: 100%;
-        border: none;
         font-size: 2em;
-        padding: 10px;
-        font-family: Roboto, sans-serif; }
-    .container .content form .calculate {
-      font-size: 2em;
-      font-family: Roboto, sans-serif;
-      background-color: #FF6138;
-      color: #ffffff;
-      border: 0;
-      padding: 15px; }
-  .container .result h2 {
-    color: #FFFF9D;
+        padding: 10px; }
+    .container .content form .button-wrapper {
+      margin-top: 4vh;
+      display: flex;
+      justify-content: center;
+      width: 100%; }
+      .container .content form .button-wrapper .calculate {
+        font-size: 2em;
+        width: 50%; }
+  .container .result {
     display: flex;
-    justify-content: center;
-    font-size: 2.2em; }
+    justify-content: space-between;
+    margin-top: 4vh;
+    visibility: hidden; }
+    .container .result input {
+      color: #FFFF9D;
+      font-size: 2.5em;
+      background-color: transparent;
+      width: 80%; }
+    .container .result__copy {
+      font-size: 1em;
+      width: 15%;
+      display: flex;
+      justify-content: center; }
+
+.config {
+  display: flex; }
+  .config .decimals .input-element input {
+    padding: 10px;
+    font-size: 1em;
+    width: 10%; }
 
